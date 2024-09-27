@@ -44,9 +44,6 @@ class StateController {
         }
     }
     
-    // Svaret på løsningen ligger her:
-    // https://www.avanderlee.com/concurrency/task-groups-in-swift/
-    
      func fetchImage(from url: URL) async -> UIImage {
         let downloadTask = Task(priority: .background) { () -> UIImage in
             guard let rawData = await NetworkService.getData(from: url) else {
